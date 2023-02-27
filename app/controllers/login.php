@@ -13,13 +13,14 @@ class Login extends Controller {
     $user->name = $name;
     
     $this->view('login/index', ['name' => $user->name]);
+    echo $name;
   }
 
-  public function formDataInfos() {
+  public function form() {
     require_once '../app/models/User.php';
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      require_once '../app/database.php';
+      
       $model = new User();
       $this->infoUser = $model->setData($username);
 

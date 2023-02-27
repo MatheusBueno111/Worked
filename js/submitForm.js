@@ -7,20 +7,20 @@ function submitForm() {
 
     console.log('formData', formData.get('username'))
    
-    fetch('/public/login/formDataInfos', {
-        method: 'POST',
-        body: formData
-    })
-    .then(function(response) {
-        if (response.ok) {
-            alert('Form submitted!');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          alert('Form submitted!');
         } else {
-            alert('An error then.');
+          alert('An error then.');
         }
-    })
-    .catch(function(error) {
-        console.log(error);
-        alert('An error occurred.');
-    });
- });
+      }
+    };
+    console.log(xhr)
+    xhr.open('POST', '/public/login/form', true);
+    xhr.send(formData);
+  });
+ 
 }
