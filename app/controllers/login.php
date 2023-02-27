@@ -19,7 +19,7 @@ class Login extends Controller {
     require_once '../app/models/User.php';
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     
+      require_once '../app/database.php';
       $model = new User();
       $this->infoUser = $model->setData($username);
 

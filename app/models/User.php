@@ -11,6 +11,8 @@ class User extends Eloquent{
 
   public function setData($username){
 
+    require_once '../app/database.php';
+
     $user->username = $username;
     $user->save();
   
