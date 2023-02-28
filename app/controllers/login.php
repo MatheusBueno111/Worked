@@ -1,8 +1,11 @@
 <?php
 
+require_once '../app/models/User.php';
+
 class Login extends Controller {
   
   protected $user;
+  // private $infoUser;
 
   public function __construct() {
     $this->user = $this->model('User');
@@ -17,14 +20,13 @@ class Login extends Controller {
   }
 
   public function form() {
-    require_once '../app/models/User.php';
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+     
+      $this->user->username = $_POST['username'];
+      $this->user->save();
       
-      $model = new User();
-      $this->infoUser = $model->setData($username);
-
-      
+      echo "Dados salvos com sucesso!";
     }
   }
 }

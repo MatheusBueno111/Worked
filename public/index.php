@@ -2,5 +2,8 @@
 
 require_once '../app/init.php';
 
-$app = new App;
-
+try {
+  $app = new App;
+} catch(Execption $e) {
+  echo $e->getMessage();
+}

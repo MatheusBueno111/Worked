@@ -15,5 +15,4 @@ class Home extends Controller {
     $this->view('home/index', ['name' => $user->name]);
   }
 
-  
 }
