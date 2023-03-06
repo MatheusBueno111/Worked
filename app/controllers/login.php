@@ -5,7 +5,6 @@ require_once '../app/models/User.php';
 class Login extends Controller {
   
   protected $user;
-  // private $infoUser;
 
   public function __construct() {
     $this->user = $this->model('User');
@@ -16,7 +15,7 @@ class Login extends Controller {
     $user->name = $name;
     
     $this->view('login/index', ['name' => $user->name]);
-    echo $name;
+    
   }
 
   public function form() {
@@ -24,9 +23,28 @@ class Login extends Controller {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
       $this->user->username = $_POST['username'];
-      $this->user->save();
+      $this->user->cidade = $_POST['cidade'];
+      $this->user->estado = $_POST['estado'];
+      $this->user->descricao = $_POST['descricao'];
+      $this->user->nascimento = $_POST['nascimento'];
+
+
+      $this->user->arquivo = $_FILES['arquivo'];
+      $arquivo = $this->user->arquivo;
+
+
+      $pasta= "images/";
+      $nomeDoArquivo = $arquivo['name'];
+      $novoNomeDoArquivo = md5($nomeDoArquivo);
+      $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
       
-      echo "Dados salvos com sucesso!";
-    }
-  }
+      $tmp_name= $arquivo['tmp_name'];
+      $destino = $pasta . $novoNomeDoArquivo . '.' . $extensao;
+
+      move_uploaded_file($tmp_name, $destino);
+      
+      $this->user->arquivo = $novoNomeDoArquivo . '.' . $extensao;    
+      $this->user->save();
+    } 
+  }  
 }

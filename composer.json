@@ -6,5 +6,10 @@
         "classmap": [
             "app/models"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
+        }
     }
 }

@@ -4,7 +4,8 @@ function submitForm() {
         event.preventDefault();
     var formData = new FormData(form);
 
-    console.log('formData', formData.get('username'))
+  
+    console.log('formData', formData.get('username'), formData.get('cidade'), formData.get('estado'), formData.get('descricao'));
    
    $.ajax({
             url: "/MVC/public/login/form",

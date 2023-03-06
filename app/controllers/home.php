@@ -6,6 +6,7 @@ class Home extends Controller {
 
   public function __construct() {
     $this->user = $this->model('User');
+    
   }
 
   public function index($name = '') {
@@ -13,6 +14,7 @@ class Home extends Controller {
     $user->name = $name;
     
     $this->view('home/index', ['name' => $user->name]);
+
   }
 
 }
