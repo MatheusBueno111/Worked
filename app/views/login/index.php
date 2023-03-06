@@ -18,6 +18,8 @@
     <label class="form-label">Nascimento:</label>
     <input class="form-control" type="date" name='nascimento' id='nascimento'>
 
+    <label class="form-label">Nascimento:</label>
+    <input class="form-control" type="file" name='arquivo' id='arquivo'>
    
     <input class='btn bg-dark text-light mt-4' type='submit' onclick="submitForm()" value='Cadastrar'>
   </form>

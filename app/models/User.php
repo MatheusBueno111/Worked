@@ -13,6 +13,7 @@ class User extends Eloquent{
     'estado', 
     'descrição',
     'nascimento',
+    'arquivo'
  
   ];
 
