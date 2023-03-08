@@ -33,7 +33,7 @@ class Login extends Controller {
       $arquivo = $this->user->arquivo;
 
 
-      $pasta= "images/";
+      $pasta= "../app/images/";
       $nomeDoArquivo = $arquivo['name'];
       $novoNomeDoArquivo = md5($nomeDoArquivo);
       $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
