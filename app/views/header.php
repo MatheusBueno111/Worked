@@ -6,6 +6,7 @@
     <div class=''>
       <ul class="nav navbar">
         <li class="active px-2"><a class='text-light' href='home'>Home</a><li>
+        <li class="active px-2"><a class='text-light' href='signup'>Sign Up</a><li>
         <li class="px-2 "><a class='text-light' href='login'>Login</a><li>
         <li class="px-2 "><a class='text-light' href='profile/getProfile'>Profile</a><li>
       </ul>

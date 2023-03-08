@@ -5,9 +5,10 @@ require_once '../app/models/User.php';
 class Profile extends Controller {
 
   protected $profile;
-
+ 
   public function __construct() {
     $this->profile = $this->model('User');
+    
   }
 
   public function index($name = '') {
@@ -23,7 +24,8 @@ class Profile extends Controller {
     
     $this->view('profile/index', ['profiles' => $profiles]); 
   }
- 
+
+  
 }
 
  
