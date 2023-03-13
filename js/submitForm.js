@@ -8,7 +8,7 @@ function submitForm() {
     console.log('formData', formData.get('username'), formData.get('cidade'), formData.get('estado'), formData.get('descricao'));
    
    $.ajax({
-            url: "/MVC/public/login/form",
+            url: "/MVC/public/info/form",
             type: "POST",
             data: formData,
             processData: false,

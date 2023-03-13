@@ -1,8 +1,7 @@
 <?php
 
-require_once '../app/models/User.php';
 
-class Login extends Controller {
+class Info extends Controller {
   
   protected $user;
 
@@ -14,7 +13,7 @@ class Login extends Controller {
     $user = $this->user;
     $user->name = $name;
     
-    $this->view('login/index', ['name' => $user->name]);
+    $this->view('info/index', ['name' => $user->name]);
     
   }
 

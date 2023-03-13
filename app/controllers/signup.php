@@ -1,6 +1,5 @@
 <?php
 
-require_once '../app/models/Permission.php';
 
 class Signup extends Controller {
   
@@ -18,7 +17,7 @@ class Signup extends Controller {
   }
 
   public function formpermission() {
-    echo 'opa';
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $this->permission->username = $_POST['username'];
       $this->permission->password = $_POST['password'];
